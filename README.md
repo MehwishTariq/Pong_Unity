@@ -1,1 +1,7 @@
 # Pong_Unity
+
+The game contains two paddles and a ball. A ball is initially set in the middle and then with 'Enter' as an input, and it moves in the respective direction till collides with the paddles or the borders.
+
+The paddle has to hit the ball if fails to hit it, will result in score for the other player.
+
+The limit in this is set to '2' as whoever scores more than '2' points will win the game.And then the player is asked if they want to play again.
