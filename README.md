@@ -5,3 +5,7 @@ The game contains two paddles and a ball. A ball is initially set in the middle 
 The paddle has to hit the ball if fails to hit it, will result in score for the other player.
 
 The limit in this is set to '2' as whoever scores more than '2' points will win the game.And then the player is asked if they want to play again.
+
+# Folder named 'Build'
+
+This project folder is a build folder contains the executable file, the folder can be unzipped anywhere on your computer and you will be able to play the game with the scene I created.
