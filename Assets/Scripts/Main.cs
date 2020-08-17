@@ -17,7 +17,7 @@ public class Main : MonoBehaviour
         Texts.SetActive(false);
         Resetbtn.SetActive(false);
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         
@@ -31,8 +31,7 @@ public class Main : MonoBehaviour
 
     private void QuitApp()
     {
-        Debug.Log("yes");
-        Application.Quit();
+       Application.Quit();
     }
 
     private void StartGame()

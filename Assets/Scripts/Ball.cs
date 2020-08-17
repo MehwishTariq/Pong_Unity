@@ -10,6 +10,8 @@ public class Ball : MonoBehaviour
 
     private Transform ball;
     private Vector2 direction;
+    public AudioClip score_clip,win_clip;
+    private AudioSource ball_out;
 
     public TextMeshProUGUI score1, score2, winner;
 
@@ -22,20 +24,20 @@ public class Ball : MonoBehaviour
     string GameState = "s";
     bool ans = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         ball = GetComponent<Transform>();
         restart = reset.GetComponent<Button>();
+        ball_out = GetComponent<AudioSource>();
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (Input.GetKey(KeyCode.Return) && GameState == "s")
         {
-            Debug.Log(ballSpeed);
+            
             direction = new Vector2(ball.position.x,ball.position.y);
             ball.Translate(direction * ballSpeed * Time.deltaTime);
             GameState = "p";
@@ -43,7 +45,7 @@ public class Ball : MonoBehaviour
 
         if (GameState == "p")
         {
-            Debug.Log(ballSpeed);
+            
             ball.Translate(direction * ballSpeed * Time.deltaTime);
             Winner();
             UpdateScore(ball.position.x);
@@ -61,7 +63,8 @@ public class Ball : MonoBehaviour
         
         if (collision.collider.tag == "Up" || collision.collider.tag == "Down")
         {            
-            direction.y = -direction.y;            
+            direction.y = -direction.y;   
+            
         }
 
         if (collision.collider.tag == "Player1" || collision.collider.tag == "Player2")
@@ -74,21 +77,20 @@ public class Ball : MonoBehaviour
     {
         if (ball > 18.0f)
         {
-            Debug.Log(ball);
+            
             p2Score += 1;
-            Debug.Log(p1Score + "" + p2Score);
             ans = true;
+            ball_out.PlayOneShot(score_clip);
             GameState = "s";
         }
         else if (ball < 1.8f)
         {
             p1Score += 1;
-            Debug.Log(p1Score + "" + p2Score);
             ans = true;
+            ball_out.PlayOneShot(score_clip);
             GameState = "s";
         }
 
-        Debug.Log("yo");
         if (score1 != null || score2 != null)
         {
             score1.text = p1Score.ToString();
@@ -100,6 +102,11 @@ public class Ball : MonoBehaviour
     {
         if (p1Score == WinScore && p1Score > p2Score)
         {
+            score1.enabled = false;
+            score2.enabled = false;
+            this.enabled = false;
+
+            ball_out.PlayOneShot(win_clip);
             winner.text = "Congratulations! Player 1 Wins!!";
 
             reset.SetActive(true);
@@ -111,6 +118,9 @@ public class Ball : MonoBehaviour
 
             score1.enabled = false;
             score2.enabled = false;
+            this.enabled = false;
+
+            ball_out.PlayOneShot(win_clip);
             winner.text = "Congratulations! Player 2 Wins!!";
 
             reset.SetActive(true);
@@ -124,12 +134,12 @@ public class Ball : MonoBehaviour
         ballSpeed = ballSpeed + 0.1f;
         ball.position = new Vector3(Random.Range(3.3f,12.0f),5.03f, 2f);
         GameState = "s";
-        Debug.Log(ballSpeed);
+       
     }
 
     public void RestartGame()
     {
         
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
     }
 }
