@@ -22,3 +22,12 @@ https://freesound.org/s/456966/
 
 # Game look
 
+https://github.com/MehwishTariq/Pong_Unity/blob/master/GameScreenShots/Pong1.PNG
+
+https://github.com/MehwishTariq/Pong_Unity/blob/master/GameScreenShots/Pong2.PNG
+
+https://github.com/MehwishTariq/Pong_Unity/blob/master/GameScreenShots/Pong3.PNG
+
+https://github.com/MehwishTariq/Pong_Unity/blob/master/GameScreenShots/Pong4.PNG
+
+https://github.com/MehwishTariq/Pong_Unity/blob/master/GameScreenShots/Pong5.PNG
