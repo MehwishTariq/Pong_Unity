@@ -19,3 +19,6 @@ https://kenney.nl/assets/puzzle-pack
 The audio at the winning sound has been taken from the following link:
 
 https://freesound.org/s/456966/
+
+# Game look
+
