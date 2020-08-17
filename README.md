@@ -9,3 +9,13 @@ The limit in this is set to '2' as whoever scores more than '2' points will win 
 # Folder named 'Build'
 
 This project folder is a build folder contains the executable file, the folder can be unzipped anywhere on your computer and you will be able to play the game with the scene I created.
+
+# Assets
+
+The models for walls, ball and paddles have been taken from the following link:
+
+https://kenney.nl/assets/puzzle-pack
+
+The audio at the winning sound has been taken from the following link:
+
+https://freesound.org/s/456966/
